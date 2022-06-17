@@ -31,12 +31,14 @@ Type diskpart to get into diskpart, then
 
 The partition layout should look like this:
 ![image](https://user-images.githubusercontent.com/24475790/174222251-6feba2b9-3ad1-4166-88a6-805fe729f20c.png)
+
 Exit diskpart.
 
 ## Copy Windows Files and set up boot
 Assuming your install drive is in drive D, the main partition is C, and the ESR is S (can use notepad --> file --> open to check), 
  - `dism /Get-WimInfo /WimFile:D:\Sources\install.wim` or `dism /Get-WimInfo /WimFile:D:\Sources\install.esd` to check what Index you want for the version of Windows you want to install, for example, 
 ![image](https://user-images.githubusercontent.com/24475790/174222787-fce2cafb-9d71-4edd-8e9c-42855faa684e.png)
+
 Assuming you want to install Windows 11 Pro (index 6):
  - `dism /Apply-Image /ImageFile:D:\Sources\install.wim /index:6 /ApplyDir:C:\` to copy Windows Files
  - `bcdboot C:\windows /s S:` to copy boot files to ESR.
