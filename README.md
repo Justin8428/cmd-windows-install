@@ -46,3 +46,5 @@ Assuming you want to install Windows 11 Pro (index 6):
  - `bcdboot C:\windows /s S:` to copy boot files to ESR.
 
 Reboot and the system should boot into Windows OOBE...
+
+Note: if doing this in Windows (not in Windows PE) remember to unmount your EFI drive. diskpart then `remove letter=s`
