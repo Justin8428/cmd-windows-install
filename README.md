@@ -47,4 +47,6 @@ Assuming you want to install Windows 11 Pro (index 6):
 
 Reboot and the system should boot into Windows OOBE...
 
-Note: if doing this in Windows (not in Windows PE) remember to unmount your EFI drive. diskpart then `remove letter=s`
+Note: if doing this in Windows (not in Windows PE) remember to unmount your EFI drive. diskpart then 
+`select volume X` where X is the volume assigned to efi
+`remove letter=s`
